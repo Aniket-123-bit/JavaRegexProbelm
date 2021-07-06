@@ -1,12 +1,14 @@
 /**
  * Purpose : User Registration
- *           User will input mobileValidate
+ *           User will input passwordValidate
  *           Validate the user inputs using regex.
  *           If matches, return valid else not valid
  *
  * @author : Aniket Raikwar
  * @since : 06.07.2021
  */
+
+
 package com.aniket.regex;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -18,23 +20,23 @@ public class UserRegistration {
 
         Scanner sc = new Scanner(System.in);
            //Regex Pattern
-         String regex = "^(91){1}[0-9]{9}$";
+        String regex = "^(?=.{8,20})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
 
-        System.out.println("Enter your Mobile number");
+        System.out.println("Enter your Password");
 
             // String input
-        String mobile = sc.next();
+        String password = sc.next();
 
            // compile the regex to create pattern
           // using compile() method
         Pattern pattern = Pattern.compile(regex);
 
         // get a matcher object from pattern
-            Matcher matcher = pattern.matcher(mobile);
+            Matcher matcher = pattern.matcher(password);
         if(matcher.matches()){
-            System.out.println("Given mobile id is valid");
+            System.out.println("Given password is valid");
         }else{
-            System.out.println("Given mobile id is not valid");
+            System.out.println("Given password is not valid");
         }
         }
 
