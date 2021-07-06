@@ -1,10 +1,12 @@
 /**
- * Valid First Name with first letter starting with capital and has minimum 3 characters in it.
+ * Purpose : User Registration
+ *           User will input emailValidate
+ *           Validate the user inputs using regex.
+ *           If matches, return valid else not valid
  *
- * @author: ANIKET RAIKWAR
- * @since: 05.07.2021
+ * @author : Aniket Raikwar
+ * @since : 06.07.2021
  */
-
 package com.aniket.regex;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -16,23 +18,25 @@ public class UserRegistration {
 
         Scanner sc = new Scanner(System.in);
            //Regex Pattern
-            String regex = "^[A-Z]{1}[a-z]{2}$";
+        String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
 
-            System.out.println("Enter your name");
+        System.out.println("Enter your Email id");
             // String input
-            String name = sc.next();
+        String email = sc.next();
 
            // compile the regex to create pattern
           // using compile() method
         Pattern pattern = Pattern.compile(regex);
 
         // get a matcher object from pattern
-            Matcher matcher = pattern.matcher(name);
-            if(matcher.matches()){
-                System.out.println("Given name id is valid");
-            }else{
-                System.out.println("Given name id is not valid");
-            }
+            Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            System.out.println("Given email id is valid");
+        }else{
+            System.out.println("Given email id is not valid");
+        }
         }
 
     }
+
+
