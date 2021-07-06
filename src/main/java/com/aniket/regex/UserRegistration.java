@@ -1,6 +1,6 @@
 /**
  * Purpose : User Registration
- *           User will input emailValidate
+ *           User will input mobileValidate
  *           Validate the user inputs using regex.
  *           If matches, return valid else not valid
  *
@@ -18,22 +18,23 @@ public class UserRegistration {
 
         Scanner sc = new Scanner(System.in);
            //Regex Pattern
-        String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+         String regex = "^(91){1}[0-9]{9}$";
 
-        System.out.println("Enter your Email id");
+        System.out.println("Enter your Mobile number");
+
             // String input
-        String email = sc.next();
+        String mobile = sc.next();
 
            // compile the regex to create pattern
           // using compile() method
         Pattern pattern = Pattern.compile(regex);
 
         // get a matcher object from pattern
-            Matcher matcher = pattern.matcher(email);
+            Matcher matcher = pattern.matcher(mobile);
         if(matcher.matches()){
-            System.out.println("Given email id is valid");
+            System.out.println("Given mobile id is valid");
         }else{
-            System.out.println("Given email id is not valid");
+            System.out.println("Given mobile id is not valid");
         }
         }
 
